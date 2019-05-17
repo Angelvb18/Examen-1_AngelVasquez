@@ -288,7 +288,9 @@ public class Inventario extends Log {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
             try
             {
-               lib.add(new Libro(nombre.getText(), autor.getText(), gen.getText(), eidt.getText(), jc_Idioma.getSelectedItem().toString())); 
+                Libro as = new Libro(nombre.getText(), autor.getText(), gen.getText(), eidt.getText(), jc_Idioma.getSelectedItem().toString());
+                as.setISBN();
+               lib.add(as); 
                JOptionPane.showMessageDialog(null,"Agregado con exito");
             }
             catch(Exception e )

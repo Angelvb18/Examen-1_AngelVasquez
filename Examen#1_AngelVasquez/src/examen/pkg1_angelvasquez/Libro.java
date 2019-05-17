@@ -6,6 +6,7 @@
 package examen.pkg1_angelvasquez;
 
 import java.util.Date;
+import java.util.Random;
 
 /**
  *
@@ -13,8 +14,8 @@ import java.util.Date;
  */
 public class Libro {
     Date aui = new Date();
-    String titulo,ISBN,staus,personap,autores , genero , Editoriales  , idioma ;
-    int anio,aniol=aui.getYear(),nump;
+    String titulo,ISBN,staus="disponible",personap,autores , genero , Editoriales  , idioma ;
+    int anio,aniol=aui.getYear(),nump=0;
 
     public Libro(String titulo, String autores, String genero, String Editoriales, String idioma) {
         this.titulo = titulo;
@@ -31,8 +32,10 @@ public class Libro {
         return ISBN;
     }
 
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
+    public void setISBN() {
+        Random r = new Random();
+        int comp= 1+r.nextInt(100000000);
+        ISBN = anio+""+anio+""+comp;
     }
 
     public String getStaus() {
