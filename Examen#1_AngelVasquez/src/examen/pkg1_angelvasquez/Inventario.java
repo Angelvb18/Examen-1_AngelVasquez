@@ -19,7 +19,7 @@ public class Inventario extends Log {
      */
     public Inventario() {
         initComponents();
-        
+
     }
 
     /**
@@ -286,55 +286,51 @@ public class Inventario extends Log {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-            try
-            {
-                Libro as = new Libro(nombre.getText(), autor.getText(), gen.getText(), eidt.getText(), jc_Idioma.getSelectedItem().toString());
-                as.setISBN();
-               lib.add(as); 
-               JOptionPane.showMessageDialog(null,"Agregado con exito");
-            }
-            catch(Exception e )
-            {
-                JOptionPane.showMessageDialog(null,"No se pudo agregar");
-            }
+        try {
+            Libro as = new Libro(nombre.getText(), autor.getText(), gen.getText(), eidt.getText(), jc_Idioma.getSelectedItem().toString());
+            as.setISBN();
+            lib.add(as);
+            JOptionPane.showMessageDialog(null, "Agregado con exito");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se pudo agregar");
+        }
 
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         int num;
-        try
-        {
-           num = Integer.parseInt(pos.getText());
-           lib.remove(num);
-           JOptionPane.showMessageDialog(null, "Operacion realizada");
-        }
-        catch(Exception e )
-        {
-           JOptionPane.showMessageDialog(null, "Operacion no realizada");
+        try {
+            num = Integer.parseInt(pos.getText());
+            lib.remove(num);
+            JOptionPane.showMessageDialog(null, "Operacion realizada");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Operacion no realizada");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
-        
+
     }//GEN-LAST:event_jTabbedPane1StateChanged
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        String [] O= null;
+        String[] O = null;
         for (int i = 0; i < lib.size(); i++) {
-            int cont=0;
-            DefaultTableModel modelo = ((DefaultTableModel)tabla1.getModel());
-            tabla1.setModel(modelo);
+            
+                int cont = 0;
+                DefaultTableModel modelo = ((DefaultTableModel) tabla1.getModel());
+                tabla1.setModel(modelo);
                 modelo.addRow(O);
                 Libro l = (Libro) lib.get(i);
                 modelo.setValueAt(l.getTitulo(), i, cont);
                 cont++;
                 modelo.setValueAt(l.getAutores(), i, cont);
                 cont++;
-                modelo.setValueAt(l.getISBN(),i,cont);
+                modelo.setValueAt(l.getISBN(), i, cont);
                 cont++;
-      
+            
+
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -377,7 +373,7 @@ public class Inventario extends Log {
             public void run() {
                 new Inventario().setVisible(true);
             }
-            
+
         });
     }
 
@@ -408,5 +404,5 @@ public class Inventario extends Log {
     private javax.swing.JTextField pos;
     private javax.swing.JTable tabla1;
     // End of variables declaration//GEN-END:variables
-   
+
 }

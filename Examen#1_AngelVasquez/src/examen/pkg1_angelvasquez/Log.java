@@ -22,7 +22,20 @@ public class Log extends javax.swing.JFrame {
         listau.add(new Usuarios("Administrador", "Lider", "1234", "Administrador", 100, 0));
         listau.add(new Usuarios("Paco", "tado", "1234", 1));
         listau.add(new Usuarios("Paco2", "tados", "1234", 2));
-
+        
+        lib.add( new Libro("Alpha", "Melva", "Accion","Casita", "Español"));
+        lib.add( new Libro("Megaman", "Mago", "Juegos","Ps1", "Español"));
+        lib.add( new Libro("Batman", "Cisco", "Accion","Dcomics", "Español"));
+        lib.add( new Libro("AW1", "Yakal", "Juegos","Pc", "Español"));
+        lib.add( new Libro("Math", "Yamel", "Escolar","Escuela alegre", "Español"));
+        lib.add( new Libro("Exception", "Juan", "Programacion","Person", "Español"));
+        lib.add( new Libro("Menus", "Pablo", "Intefaz","Person2", "Español"));
+        lib.add( new Libro("Nimbus", "Rodrigo", "Sistema","Casita", "Español"));
+        lib.add( new Libro("Windos", "Melvaco", "Computacion","Casita", "Español"));
+        lib.add( new Libro("Consructor", "Asist", "Informacion","Casita", "Español"));
+        for (int i = 0; i < lib.size(); i++) {
+            lib.get(i).setISBN();
+        }
     }
 
     /**
@@ -142,6 +155,7 @@ public class Log extends javax.swing.JFrame {
             if (listau.get(po).getTipo().equals("Administrador")) {
                 Inventario a = new Inventario();
                 a.setVisible(ras);
+               
             }
             else
             {
